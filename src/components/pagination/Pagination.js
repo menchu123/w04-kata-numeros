@@ -4,7 +4,7 @@ const Pagination = () => {
   const [page, setPage] = useState(1);
 
   const increment = () => {
-    if (page < 6) {
+    if (page < 16) {
       setPage(page + 1);
     }
   };
