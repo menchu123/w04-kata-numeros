@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Pagination.css";
 
 const Pagination = () => {
   const [page, setPage] = useState(1);
@@ -17,15 +18,21 @@ const Pagination = () => {
 
   return (
     <div className="pageNumbers">
-      <div className="button" onClick={decrement}>
+      <div
+        className={`pageNumber__item ${page === 1 ? " disabled" : ""}`}
+        onClick={decrement}
+      >
         «
       </div>
-      <div className="pageNumber">{page}</div>
-      <div className="pageNumber">{page + 1}</div>
-      <div className="pageNumber">{page + 2}</div>
-      <div className="pageNumber">{page + 3}</div>
-      <div className="pageNumber">{page + 4}</div>
-      <div className="button" onClick={increment}>
+      <div className="pageNumber__item">{page}</div>
+      <div className="pageNumber__item">{page + 1}</div>
+      <div className="pageNumber__item">{page + 2}</div>
+      <div className="pageNumber__item">{page + 3}</div>
+      <div className="pageNumber__item">{page + 4}</div>
+      <div
+        className={`pageNumber__item ${page === 16 ? " disabled" : ""}`}
+        onClick={increment}
+      >
         »
       </div>
     </div>
