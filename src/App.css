@@ -4,3 +4,27 @@
   justify-content: center;
   align-items: center;
 }
+
+.pageNumbers {
+  display: flex;
+  margin: 30px 50px;
+  font-size: 30px;
+  cursor: default;
+}
+
+.pageNumber__item {
+  border: 1px grey solid;
+  padding: 10px;
+  width: 30px;
+}
+
+.disabled {
+  background-color: #c4c4c4;
+  color: grey;
+}
+
+.giantNumber {
+  margin: 20px 200px;
+  font-size: 100px;
+  font-weight: 600;
+}
