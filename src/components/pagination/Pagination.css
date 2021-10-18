@@ -15,3 +15,9 @@
   background-color: #c4c4c4;
   color: grey;
 }
+
+.giantNumber {
+  margin: 20px 200px;
+  font-size: 100px;
+  font-weight: 600;
+}
