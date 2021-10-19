@@ -5,7 +5,7 @@ import { useState } from "react";
 function App() {
   const [page, setPage] = useState(1);
   const [giantNumber, setGiantNumber] = useState("");
-  const numberArray = new Array(5).fill(page);
+  const numberArray = new Array(7).fill(page);
 
   const increment = () => {
     if (page < 16) {
@@ -34,6 +34,7 @@ function App() {
 
         {numberArray.map((page, i) => (
           <Pagination
+            key={page + i}
             className={"pageNumber__item"}
             text={page + i}
             actionOnClick={(page) => renderGiantNumber(page)}
