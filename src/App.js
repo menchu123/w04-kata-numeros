@@ -5,6 +5,7 @@ import { useState } from "react";
 function App() {
   const [page, setPage] = useState(1);
   const [giantNumber, setGiantNumber] = useState("");
+  const numberArray = new Array(5).fill(page);
 
   const increment = () => {
     if (page < 16) {
@@ -31,35 +32,13 @@ function App() {
           actionOnClick={decrement}
         />
 
-        <Pagination
-          className={"pageNumber__item"}
-          text={page}
-          actionOnClick={(page) => renderGiantNumber(page)}
-        />
-
-        <Pagination
-          className={"pageNumber__item"}
-          text={page + 1}
-          actionOnClick={(page) => renderGiantNumber(page)}
-        />
-
-        <Pagination
-          className={"pageNumber__item"}
-          text={page + 2}
-          actionOnClick={(page) => renderGiantNumber(page)}
-        />
-
-        <Pagination
-          className={"pageNumber__item"}
-          text={page + 3}
-          actionOnClick={(page) => renderGiantNumber(page)}
-        />
-
-        <Pagination
-          className={"pageNumber__item"}
-          text={page + 4}
-          actionOnClick={(page) => renderGiantNumber(page)}
-        />
+        {numberArray.map((page, i) => (
+          <Pagination
+            className={"pageNumber__item"}
+            text={page + i}
+            actionOnClick={(page) => renderGiantNumber(page)}
+          />
+        ))}
 
         <Pagination
           className={`pageNumber__item ${page === 16 ? " disabled" : ""}`}
